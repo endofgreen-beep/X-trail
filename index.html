@@ -2,7 +2,7 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>X-Trailer | Эксклюзивные прицепы</title>
     <meta name="description" content="Прицеп, достойный Вашего гидроцикла. Эксклюзивные прицепы премиум-класса." />
     
@@ -12,8 +12,7 @@
     
     <!-- 
       Tailwind CSS CDN
-      Ensures styles load reliably on all devices, acting as a fallback 
-      if the build process has CSS generation issues.
+      Ensures styles load reliably on all devices.
     -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -46,7 +45,6 @@
 </head>
   <body class="bg-white text-gray-900 antialiased">
     <div id="root"></div>
-    <!-- Changed path to relative ./index.tsx to prevent path resolution errors on some mobile browsers/environments -->
-    <script type="module" src="./index.tsx"></script>
+    <script type="module" src="/index.tsx"></script>
   </body>
 </html>

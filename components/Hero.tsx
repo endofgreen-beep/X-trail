@@ -13,16 +13,10 @@ export const Hero: React.FC = () => {
       <div className="fixed inset-0 z-0 w-full h-full">
         <img
           src="https://iili.io/fr4heg2.jpg"
-          onError={(e) => {
-            const target = e.currentTarget;
-            if (!target.src.includes('unsplash')) {
-                // Use a standard HD width instead of 2560 to save memory on mobile
-                target.src = "https://images.unsplash.com/photo-1566847438217-76e82d383f84?q=80&w=1920&auto=format&fit=crop";
-            }
-          }}
           alt="Premium Jet Ski Trailer Lifestyle"
           className="w-full h-full object-cover object-center opacity-90"
-          decoding="async" 
+          decoding="async"
+          loading="eager"
         />
         {/* Overlay gradient for text readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-black/20 to-black/80"></div>
