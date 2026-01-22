@@ -1,6 +1,7 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* 
+  We are using Tailwind CDN in index.html for stability in this environment.
+  Removed @tailwind directives here to prevent double-loading and performance issues on mobile.
+*/
 
 body {
   font-family: 'Inter', sans-serif;

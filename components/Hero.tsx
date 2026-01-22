@@ -8,7 +8,7 @@ export const Hero: React.FC = () => {
   };
 
   return (
-    <section id="hero" className="relative h-screen md:h-[100dvh] min-h-[600px] flex items-start pt-28 md:pt-0 md:items-center justify-center overflow-hidden bg-gray-900">
+    <section id="hero" className="relative h-screen supports-[height:100dvh]:h-[100dvh] min-h-[600px] flex items-start pt-28 md:pt-0 md:items-center justify-center overflow-hidden bg-gray-900">
       {/* Background Image - Fixed for Parallax Effect */}
       <div className="fixed inset-0 z-0 w-full h-full">
         <img
@@ -22,7 +22,7 @@ export const Hero: React.FC = () => {
           }}
           alt="Premium Jet Ski Trailer Lifestyle"
           className="w-full h-full object-cover object-center opacity-90"
-          decoding="sync"
+          decoding="async" 
         />
         {/* Overlay gradient for text readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-black/20 to-black/80"></div>

@@ -46,6 +46,7 @@
 </head>
   <body class="bg-white text-gray-900 antialiased">
     <div id="root"></div>
-    <script type="module" src="/index.tsx"></script>
+    <!-- Changed path to relative ./index.tsx to prevent path resolution errors on some mobile browsers/environments -->
+    <script type="module" src="./index.tsx"></script>
   </body>
 </html>
