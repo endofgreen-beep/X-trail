@@ -8,7 +8,7 @@ export const Hero: React.FC = () => {
   };
 
   return (
-    <section id="hero" className="relative h-screen min-h-[700px] flex items-start pt-28 md:pt-0 md:items-center justify-center overflow-hidden bg-gray-900">
+    <section id="hero" className="relative h-screen md:h-[100dvh] min-h-[600px] flex items-start pt-28 md:pt-0 md:items-center justify-center overflow-hidden bg-gray-900">
       {/* Background Image - Fixed for Parallax Effect */}
       <div className="fixed inset-0 z-0 w-full h-full">
         {/* 
@@ -18,18 +18,15 @@ export const Hero: React.FC = () => {
         <img
           src="https://iili.io/fr4heg2.jpg"
           onError={(e) => {
-            // Fallback to the medium version if full res fails, then stock
             const target = e.currentTarget;
-            if (target.src === "https://iili.io/fr4heg2.jpg") {
-                target.src = "https://iili.io/fr4heg2.md.jpg";
-            } else {
+            // Prevent infinite loops by checking if we already tried the fallback
+            if (!target.src.includes('unsplash')) {
                 target.src = "https://images.unsplash.com/photo-1566847438217-76e82d383f84?q=80&w=2560&auto=format&fit=crop";
-                target.onerror = null;
             }
           }}
           alt="Premium Jet Ski Trailer Lifestyle"
           className="w-full h-full object-cover object-center opacity-90"
-          {...{ fetchPriority: "high" } as any} // Cast to any to avoid React typescript complaints in older versions, though supported in 18.3+
+          {...{ fetchPriority: "high" } as any}
           decoding="sync"
         />
         {/* Overlay gradient for text readability */}

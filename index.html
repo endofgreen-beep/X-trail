@@ -10,7 +10,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap&subset=cyrillic" rel="stylesheet">
     
-    <!-- Tailwind CSS CDN -->
+    <!-- 
+      FIX: Added Tailwind CSS CDN. 
+      This ensures styles work immediately (fixing huge images and alignment) 
+      even if the Vite build process isn't running correctly.
+    -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -27,7 +31,6 @@
         }
       }
     </script>
-
   <script type="importmap">
 {
   "imports": {
