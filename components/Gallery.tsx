@@ -69,6 +69,10 @@ export const Gallery: React.FC = () => {
                   onClick={() => openLightbox(index)}
                   loading="lazy"
                   decoding="async"
+                  onError={(e) => {
+                    // Fallback to thumbnail if full res fails (relevant for index 10)
+                    e.currentTarget.src = img.thumb;
+                  }}
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 pointer-events-none" />
             </FadeIn>
@@ -102,6 +106,15 @@ export const Gallery: React.FC = () => {
                 alt="Full view"
                 className="max-h-[90vh] max-w-[90vw] object-contain shadow-2xl animate-in fade-in duration-300"
                 onClick={(e) => e.stopPropagation()} 
+                onError={(e) => {
+                    // Critical fix: If full image fails to load, fallback to the thumbnail
+                    // This ensures the user sees something instead of a broken image
+                    const target = e.currentTarget;
+                    const fallback = images[selectedImage].thumb;
+                    if (target.src !== fallback) {
+                        target.src = fallback;
+                    }
+                }}
             />
           </div>
 
