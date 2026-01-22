@@ -45,19 +45,19 @@ export const Navbar: React.FC = () => {
         </div>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex items-center space-x-8">
+        <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
           {navLinks.map((link) => (
             <button
               key={link.id}
               onClick={() => scrollTo(link.id)}
-              className="text-sm font-medium text-gray-600 hover:text-black transition-colors"
+              className="text-sm font-medium text-gray-600 hover:text-black transition-colors whitespace-nowrap"
             >
               {link.label}
             </button>
           ))}
           <button
             onClick={() => scrollTo('contact')}
-            className="bg-accent text-white px-6 py-2.5 rounded-lg text-sm font-medium hover:bg-gray-800 transition-all transform hover:scale-105"
+            className="bg-accent text-white px-6 py-2.5 rounded-lg text-sm font-medium hover:bg-gray-800 transition-all transform hover:scale-105 whitespace-nowrap"
           >
             Рассчитать стоимость
           </button>
@@ -73,20 +73,20 @@ export const Navbar: React.FC = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-white border-b border-gray-100 shadow-lg">
-          <div className="flex flex-col p-6 space-y-4">
+        <div className="md:hidden absolute top-full left-0 right-0 bg-white border-b border-gray-100 shadow-lg h-screen">
+          <div className="flex flex-col p-6 space-y-6 items-center pt-12">
             {navLinks.map((link) => (
               <button
                 key={link.id}
                 onClick={() => scrollTo(link.id)}
-                className="text-left text-lg font-medium text-gray-800"
+                className="text-2xl font-medium text-gray-800"
               >
                 {link.label}
               </button>
             ))}
              <button
                 onClick={() => scrollTo('contact')}
-                className="bg-accent text-white px-6 py-3 rounded-lg text-center font-medium mt-4"
+                className="bg-accent text-white px-8 py-4 rounded-xl text-lg font-medium mt-8 w-full max-w-xs"
               >
                 Рассчитать стоимость
               </button>
